@@ -1,0 +1,38 @@
+spring:
+
+  servlet:
+    multipart:
+      maxFileSize: 15MB
+      maxRequestSize: 150MB
+
+  h2:
+    console:
+      enabled: true
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/Dr.YumYum
+    driver-class-name: org.postgresql.Driver
+    username: yu-sun00
+    password: dbtjsdn5876@@
+
+  jpa:
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+
+logging:
+  level:
+    capstone: DEBUG
+
+jwt:
+  header: Authorization
+  secret: sejongUniversityDr.YumYumProjectTeamMemberNameBrokenFinger98,sigmaith,s1lv3rrud
+  token-validity-in-seconds: 86400
+
+flask:
+  url: https://drone-restapi-lwcnu.run.goorm.site
