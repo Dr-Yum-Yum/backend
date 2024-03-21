@@ -3,12 +3,14 @@ package com.yumyum.backend.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 @Builder
 @Getter
-public class Member extends BaseEntity{
+public class Member extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -33,9 +35,25 @@ public class Member extends BaseEntity{
     @Column(nullable = false, unique = false)
     private String nickname;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = true, unique = false)
+    private String statusMessage;
+
+    @Column(nullable = true, unique = true)
     private String profileImagePath;
 
-    @Column(nullable = false, unique = false)
+    @Column(nullable = true, unique = true)
     private String backgroundImagePath;
+
+    @OneToMany(mappedBy = "reviewer", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Review> reviews;
+
+    @OneToMany(mappedBy = "member", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Wish> wishList;
+
+    @OneToMany(mappedBy = "channelParticipant", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<ChannelParticipant> channels;
+
+    @OneToMany(mappedBy = "planParticipant", fetch = FetchType.LAZY)
+    private List<PlanParticipant> plans;
 }
+
