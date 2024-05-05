@@ -10,7 +10,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 @Getter
-public class Restaurant extends BaseEntity{
+public class Restaurant extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

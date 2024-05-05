@@ -8,7 +8,7 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 @Getter
-public class PlanParticipant extends BaseEntity {
+public class PlanParticipant extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

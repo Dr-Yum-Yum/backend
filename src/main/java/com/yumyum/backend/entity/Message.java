@@ -2,8 +2,6 @@ package com.yumyum.backend.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
 
 import java.time.LocalDateTime;
 
@@ -12,7 +10,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 @Getter
-public class Message extends BaseEntity{
+public class Message extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

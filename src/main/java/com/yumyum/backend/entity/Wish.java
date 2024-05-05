@@ -8,7 +8,7 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 @Getter
-public class Wish extends BaseEntity {
+public class Wish extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

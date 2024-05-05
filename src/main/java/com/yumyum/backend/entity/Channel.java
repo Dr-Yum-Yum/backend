@@ -10,7 +10,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 @Getter
-public class Channel extends BaseEntity{
+public class Channel extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

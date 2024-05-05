@@ -8,19 +8,20 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 @Getter
-public class Friend extends BaseEntity{
+public class Friend extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "friend_id")
     private Long id;
 
-    @Column(nullable = false, unique = true)
-    private Long fromMemberId;
+    @ManyToOne
+    @JoinColumn(name = "from_member_id")
+    private Member fromMember;
 
     @ManyToOne
-    @JoinColumn(name = "member_id")
-    private Member toMemberId;
+    @JoinColumn(name = "to_member_id")
+    private Member toMember;
 
     @Enumerated(EnumType.STRING)
     private FriendStatus status;
