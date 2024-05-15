@@ -22,21 +22,13 @@ public class QRestaurant extends EntityPathBase<Restaurant> {
 
     public final QBaseTimeEntity _super = new QBaseTimeEntity(this);
 
-    public final StringPath address = createString("address");
-
     //inherited
     public final DateTimePath<java.time.LocalDateTime> created = _super.created;
 
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
-    public final StringPath imagePath = createString("imagePath");
-
     //inherited
     public final DateTimePath<java.time.LocalDateTime> modified = _super.modified;
-
-    public final StringPath name = createString("name");
-
-    public final StringPath phone = createString("phone");
 
     public final ListPath<Review, QReview> reviews = this.<Review, QReview>createList("reviews", Review.class, QReview.class, PathInits.DIRECT2);
 

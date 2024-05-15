@@ -35,8 +35,6 @@ public class QMember extends EntityPathBase<Member> {
 
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
-    public final StringPath loginId = createString("loginId");
-
     //inherited
     public final DateTimePath<java.time.LocalDateTime> modified = _super.modified;
 
@@ -44,15 +42,15 @@ public class QMember extends EntityPathBase<Member> {
 
     public final StringPath nickname = createString("nickname");
 
-    public final StringPath password = createString("password");
-
-    public final StringPath phone = createString("phone");
-
     public final ListPath<PlanParticipant, QPlanParticipant> plans = this.<PlanParticipant, QPlanParticipant>createList("plans", PlanParticipant.class, QPlanParticipant.class, PathInits.DIRECT2);
 
     public final StringPath profileImagePath = createString("profileImagePath");
 
     public final ListPath<Review, QReview> reviews = this.<Review, QReview>createList("reviews", Review.class, QReview.class, PathInits.DIRECT2);
+
+    public final EnumPath<Role> role = createEnum("role", Role.class);
+
+    public final EnumPath<SnsType> snsType = createEnum("snsType", SnsType.class);
 
     public final StringPath statusMessage = createString("statusMessage");
 

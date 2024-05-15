@@ -1,5 +1,6 @@
 package com.yumyum.backend.entity;
 
+import com.yumyum.backend.dto.responseDto.OAuth2Response;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -31,7 +32,7 @@ public class Member extends BaseTimeEntity {
     private SnsType snsType;
 
     @Enumerated(EnumType.STRING)
-    private Role level;
+    private Role role;
 
     @Column(nullable = true, unique = false)
     private String statusMessage;
@@ -56,5 +57,10 @@ public class Member extends BaseTimeEntity {
 
     @OneToMany(mappedBy = "planParticipant", fetch = FetchType.LAZY)
     private List<PlanParticipant> plans;
+
+    public void changeNameAndEmail(OAuth2Response oAuth2Response){
+        this.name = oAuth2Response.getName();
+        this.email = oAuth2Response.getEmail();
+    }
 }
 
