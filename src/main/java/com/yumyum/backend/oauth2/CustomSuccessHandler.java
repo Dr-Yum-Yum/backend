@@ -1,7 +1,7 @@
 package com.yumyum.backend.oauth2;
 
-import com.yumyum.backend.dto.CustomOAuth2User;
-import com.yumyum.backend.jwt.JWTUtil;
+import com.yumyum.backend.oauth2.dto.CustomOAuth2User;
+import com.yumyum.backend.jwt.domain.JWTUtil;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
