@@ -28,6 +28,7 @@ spring:
     header: Authorization
     secret: sejongUniversityDr.YumYumProjectTeamMemberNameBrokenFinger98,sigmaith,s1lv3rrud
     token-validity-in-seconds: 86400
+    jwk-set-uri: https://your-auth-server.com/.well-known/jwks.json
 
   security:
     oauth2:
